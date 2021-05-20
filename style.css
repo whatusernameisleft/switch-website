@@ -1,166 +1,179 @@
-body,
-html {
-    height: 100%;
-    padding: 0;
+html,
+body {
     margin: 0;
+    padding: 0;
 }
 
 body {
-    background-color: white;
-    color: #3c4043;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 
-.welcomeDiv {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    color: white;
+.vidContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
     z-index: 1;
 }
 
-.welcome {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+.switchIntroVid {
     width: 100%;
-}
-
-.welcomeText {
-    font-size: 60px;
-    font-family: 'Noto Sans JP', sans-serif;
-}
-
-.welcomeLogo {
-    display: flex;
-    padding-left: 15px;
+    height: 100%;
 }
 
 .mainContainer {
     width: 100%;
     height: 100%;
+}
+
+.close {
     position: absolute;
-    top: 0;
-    background-color: white;
-    text-align: center;
-}
-
-.section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo {
-    margin-top: 200px;
-    margin-bottom: 20px;
-    margin-left: 5%;
-    display: flex;
-}
-
-.database {
-    margin: 0;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 24px;
-}
-
-.bar {
-    display: flex;
-    margin: 0 auto;
-    width: 575px;
-    border-radius: 30px;
-    border: 1px solid #dcdcdc;
-    align-items: center;
-    justify-content: center;
-}
-
-.bar:hover {
-    box-shadow: 1px 1px 8px 1px #dcdcdc;
-}
-
-.bar:focus-within {
-    box-shadow: 1px 1px 8px 1px #dcdcdc;
-    outline: none;
-}
-
-.searchbar {
-    height: 45px;
-    border: none;
-    width: 490px;
-    font-size: 16px;
-    outline: none;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-a {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-}
-
-.voice {
-    height: 20px;
-}
-
-.search {
-    color: #9aa0a6;
-    height: 20px;
-}
-
-.tableContainer {
-    display: inline-block;
-    text-align: left;
-    background-color: #9fc1f9;
-    font-family: 'Noto Sans JP', sans-serif;
-    opacity: 0;
-}
-
-table {
-    width: 800px;
-    border-collapse: collapse;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-th,
-td {
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #3c4043;
-}
-
-thead th {
-    background-color: #4285F4;
     color: #fff;
+    top: 50px;
+    right: 50px;
+    font-size: 1.7em;
+    cursor: pointer;
+    z-index: 999;
+    transform: rotate(0deg);
+    transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-tbody tr :hover {
-    background-color: rgba(255, 255, 255, 0.3);
+.close:hover {
+    font-size: 2.4em;
+    transform: rotate(360deg);
 }
 
+.account {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1000px;
+    width: 0;
+    height: 0;
+    background: #ff4554;
+    transition: all .4s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-tbody td {
+.account span {
+    color: #ff4554;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+.account .inputContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.account .input {
+    width: 350px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #eee;
+    color: #eee;
+    font-size: 1.3em;
+}
+
+.account .input::placeholder {
+    color: #eee;
+}
+
+.inputContainer button {
+    border-color: #eee;
+    border-style: solid;
+    background-color: transparent;
+    color: #eee;
+    font-size: 25px;
+    margin-left: 30px;
+    padding: 7px 13px;
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+.inputContainer button:hover {
+    background-color: #eee;
+    color: #ff4554;
+}
+
+.account.open {
+    height: 4000px;
+    width: 4000px;
+}
+
+.formContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: #ff4554;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: sans-serif;
+}
+
+.formContainer .inputBox {
     position: relative;
 }
 
-tbody td :hover::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -9999px;
-    bottom: -9999px;
-    background-color: rgba(255, 255, 255, 0.2);
-    z-index: -1;
+.formContainer .inputBox input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    outline: none;
+    background: transparent;
 }
 
-.status {
-    color: #ff0000;
-    font-weight: bold;
+.formContainer .inputBox label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #eee;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.formContainer .inputBox input:focus~label,
+.formContainer .inputBox input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #eee;
+    font-size: 12px;
+}
+
+.formContainer button {
+    position: relative;
+    margin-top: 30px;
+    padding: 7px 13px;
+    border-color: #eee;
+    border-style: solid;
+    font-size: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    border-radius: 0px;
+    color: #eee;
+    cursor: pointer;
+}
+
+.formContainer button:hover {
+    background-color: #eee;
+    color: #ff4554;
 }

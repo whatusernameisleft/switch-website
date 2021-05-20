@@ -4,66 +4,91 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css"></link>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="switch.css">
+    <link rel="shortcut icon" href="https://seeklogo.com/images/N/nintendo-switch-logo-38D4F5C7E7-seeklogo.com.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
         integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
         integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="index.js" defer></script>
-    <title>Google Database</title>
-	<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/800px-Google_%22G%22_Logo.svg.png" type="image/gif">
+    <title>Nintendo Switch</title>
 </head>
 <body>
-    <div class="welcomeDiv">
-        <div class="welcome">
-            <h1 class="welcomeText">
-                Welcome to
-            </h1>
-            <div class="welcomeLogo">
-                <img src="./res/google logo.svg" alt="google logo">
-                <h1 class="database">Database</h1>
-            </div>
-        </div>
+    <div class="vidContainer">
+        <video class="switchIntroVid" src="./res/switch intro.mp4" autoplay></video>
     </div>
-
     <div class="mainContainer">
-        <div class="interfaceContainer">
-            <div class="section">
-                <div class="logo">
-                    <img src="./res/google logo.svg" alt="google logo">
-                    <h1 class="database">Database</h1>
-                </div>
+        <div class="accountMenu">
+            <div class="close">
+                <span class="material-icons closeButton">close</span>
             </div>
-        
-            <div class="searchDiv">
-                <div class="bar">
-                    <span class="material-icons search">search</span>
-                    <input class="searchbar" type="text" title="Search">
-                    <a href="#">
-                        <img class="voice" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/716px-Google_mic.svg.png" title="Search by Voice">
-                    </a>
+              
+            <div class="account">
+                <span class="material-icons accountButton">account_circle</span>
+                <div class="inputContainer">
+                    <input type="text" class="input" placeholder="Login ID">
+                    <button onclick="login()">Login</button>
                 </div>
             </div>
         </div>
-        <div class="tableContainer">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Source</th>
-                        <th>Value</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="source"></td>
-                        <td class="value"></td>
-                        <td class="status"></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="formContainer">
+            <div class="inputBox">
+                <input type="text" class="coke" required="">
+                <label>Coca-Cola Secret Ingredient</label>
+            </div>
+            <div class="inputBox">
+                <input type="text" class="kfc" required="">
+                <label>KFC 11 Herbs and Spices</label>
+            </div>
+            <button onclick="submit()">Submit</button>
+        </div>
+        <div class="switchContainer">
+            <div class="switch">
+                <div class="body">
+                <div class="volume"></div>
+                <img src="res/Access Granted.png" class="accessGranted" alt="access granted">
+                <div class="continue">
+                    PRESS <div class="xButton"><div>X</div></div> TO CONTINUE
+                </div>
+                <div class="countdown"></div>
+                <div class="screen">
+                </div>
+                </div>
+                
+                <div class="joy-con left">
+                <div class="button-group">
+                    <div class="button arrow up" id="UP"></div>
+                    <div class="button arrow right" id="RIGHT"></div>
+                    <div class="button arrow down" id="DOWN"></div>
+                    <div class="button arrow left" id="LEFT"></div>
+                </div>
+                
+                <div class="stick"></div>
+                <div class="select"></div>
+                <div class="capture"></div>
+                <div class="shoulder l"></div>
+                </div>
+                
+                <div class="joy-con right">
+                <div class="button-group">
+                    <div class="button letter" data-letter="X" id="X"></div>
+                    <div class="button letter" data-letter="A" id="A"></div>
+                    <div class="button letter" data-letter="B" id="B"></div>
+                    <div class="button letter" data-letter="Y" id="Y"></div>
+                </div>
+                
+                <div class="stick"></div>
+                <div class="start"></div>
+                <div class="home"></div>
+                <div class="shoulder r"></div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
